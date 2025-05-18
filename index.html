@@ -1,0 +1,123 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emotional Support for Teens</title>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            background-color: #f0f8ff;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+        header {
+            background: linear-gradient(135deg, #3498db, #9b59b6);
+            color: #fff;
+            padding: 2em;
+            text-align: center;
+        }
+        nav {
+            background-color: #34495e;
+            color: #fff;
+            padding: 1em;
+            text-align: center;
+        }
+        nav a {
+            color: #fff;
+            margin: 0 1em;
+            text-decoration: none;
+        }
+        section {
+            max-width: 800px;
+            margin: auto;
+            padding: 2em;
+            background-color: #fff;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+        form input, form textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        footer {
+            text-align: center;
+            padding: 1em;
+            background-color: #34495e;
+            color: #fff;
+            margin-top: 30px;
+        }
+        .response {
+            margin-top: 10px;
+            background-color: #ecf0f1;
+            padding: 1em;
+            border-radius: 5px;
+        }
+    </style>
+    <script>
+        function respondToFeeling() {
+            const feeling = document.getElementById('feeling').value;
+            const responseDiv = document.getElementById('response');
+            let response;
+
+            if (feeling.toLowerCase().includes('sad') || feeling.toLowerCase().includes('depressed')) {
+                response = "It's okay to feel sad. Talking to someone you trust can really help. You're not alone.";
+            } else if (feeling.toLowerCase().includes('happy') || feeling.toLowerCase().includes('excited')) {
+                response = "That's amazing! Sharing your happiness can inspire others. Keep spreading joy!";
+            } else {
+                response = "Thank you for sharing. Remember, expressing your feelings is a great first step.";
+            }
+
+            responseDiv.innerHTML = response;
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Emotional Support for Teens</h1>
+        <p>Share your feelings and get positive support</p>
+    </header>
+    <nav>
+        <a href="#share">Share Feelings</a>
+        <a href="#register">Register</a>
+    </nav>
+    <section id="share">
+        <h2>How Are You Feeling Today?</h2>
+        <form onsubmit="event.preventDefault(); respondToFeeling();">
+            <label for="feeling">Express your thoughts:</label>
+            <textarea id="feeling" rows="5" placeholder="Write how you feel..."></textarea>
+            <button type="submit">Share</button>
+        </form>
+        <div id="response" class="response"></div>
+    </section>
+    <section id="register">
+        <h2>Join Our Community</h2>
+        <form>
+            <label for="username">Username:</label>
+            <input type="text" id="username" placeholder="Enter your username">
+            <label for="email">Email:</label>
+            <input type="email" id="email" placeholder="Enter your email">
+            <label for="password">Password:</label>
+            <input type="password" id="password" placeholder="Enter your password">
+            <button type="submit">Register</button>
+        </form>
+    </section>
+    <footer>
+        <p>Developed by Josue Guerra - 2025</p>
+    </footer>
+</body>
+</html>
